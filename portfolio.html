@@ -1,151 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - ArchiPrincy</title>
-    <meta name="description" content="Explore our portfolio of architectural projects and designs.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio - Architect Princy</title>
+<meta name="description" content="Explore our portfolio of architectural projects and designs.">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+.portfolio-item { position:relative; overflow:hidden; cursor:pointer; }
+.portfolio-item img {
+    width:100%; height:320px; object-fit:cover;
+    transition:0.4s ease;
+}
+.portfolio-item:hover img { transform:scale(1.08); }
+
+.portfolio-overlay {
+    position:absolute; inset:0;
+    background:rgba(0,0,0,0.7);
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    color:#fff;
+    opacity:0;
+    transition:0.3s;
+}
+.portfolio-item:hover .portfolio-overlay { opacity:1; }
+</style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">ArchiPrincy</a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="portfolio.html">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <main>
-        <!-- Page Header -->
-        <section class="bg-dark padding-large" style="padding-top: 120px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-header">
-                            <div class="title">
-                                <span>Our Works</span>
-                            </div>
-                            <h1 class="section-title light">Portfolio</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">Architect Princy</a>
 
-        <!-- Portfolio Section -->
-        <section class="bg-dark padding-large">
-            <div class="container">
-                <!-- Filters -->
-                <div class="portfolio-filters">
-                    <button class="filter-btn active" onclick="filterProjects('all')">All</button>
-                    <button class="filter-btn" onclick="filterProjects('residential')">Residential</button>
-                </div>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-                <!-- Portfolio Grid -->
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <div class="col project-card" data-category="residential">
-                        <div class="portfolio-item">
-                            <img src="images/home2.jpeg" alt="Modern Courtyard Residence">
-                            <div class="portfolio-overlay">
-                                <h3>Modern Courtyard Residence</h3>
-                                <p>Residential</p>
-                                <p>2023</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col project-card" data-category="residential">
-                        <div class="portfolio-item">
-                            <img src="images/home3.jpg" alt="Urban Workspace Studio">
-                            <div class="portfolio-overlay">
-                                <h3>Urban Workspace Studio</h3>
-                                <p>Residential</p>
-                                <p>2024</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col project-card" data-category="residential">
-                        <div class="portfolio-item">
-                            <img src="images/home4.jpg" alt="Minimal Villa Concept">
-                            <div class="portfolio-overlay">
-                                <h3>Minimal Villa Concept</h3>
-                                <p>Residential</p>
-                                <p>2022</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col project-card" data-category="residential">
-                        <div class="portfolio-item">
-                            <img src="images/home5.jpg" alt="Contemporary Living Interiors">
-                            <div class="portfolio-overlay">
-                                <h3>Contemporary Living Interiors</h3>
-                                <p>Residential</p>
-                                <p>2023</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col project-card" data-category="residential">
-                        <div class="portfolio-item">
-                            <img src="images/home6.jpg" alt="Verdant Nexus - Green Building">
-                            <div class="portfolio-overlay">
-                                <h3>Verdant Nexus - Green Building</h3>
-                                <p>Residential</p>
-                                <p>2024</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col project-card" data-category="residential">
-                        <div class="portfolio-item">
-                            <img src="images/home7.jpg" alt="Luxury Rooftop Pavilion">
-                            <div class="portfolio-overlay">
-                                <h3>Luxury Rooftop Pavilion</h3>
-                                <p>Residential</p>
-                                <p>2024</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
 
-                <!-- Results Count -->
-                <div style="text-align: center; margin-top: 60px; color: #fff;">
-                    <p>Showing <span id="projectCount">6</span> project(s)</p>
-                </div>
-            </div>
-        </section>
+<main>
 
-        <!-- CTA Section -->
-        <section class="padding-large" style="text-align: center;">
-            <div class="container">
-                <h2 class="section-title mb-4">Ready to start your project?</h2>
-                <p class="mb-4">Let us help you bring your architectural vision to life.</p>
-                <a href="contact.html" class="btn btn-accent btn-xlarge btn-rounded">Get in Touch</a>
-            </div>
-        </section>
-    </main>
+<!-- HEADER -->
+<section class="bg-dark padding-large" style="padding-top:120px;">
+<div class="container text-center">
+<div class="title">
+<span>Our Works</span>
+</div>
+<h1 class="section-title light">Portfolio</h1>
+</div>
+</section>
 
-    <!-- Floating Buttons -->
+<!-- PORTFOLIO -->
+<section class="bg-dark padding-large">
+<div class="container">
+
+<div class="portfolio-filters text-center mb-5">
+<button class="filter-btn active" onclick="filterProjects('all')">All</button>
+<button class="filter-btn" onclick="filterProjects('residential')">Residential</button>
+<button class="filter-btn" onclick="filterProjects('commercial')">Commercial</button>
+<button class="filter-btn" onclick="filterProjects('furniture')">Furniture</button>
+</div>
+
+<div class="row g-4" id="portfolioContainer"></div>
+
+<div style="text-align:center;margin-top:60px;color:#fff;">
+<p>Showing <span id="projectCount">0</span> project(s)</p>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="padding-large text-center">
+<div class="container">
+<h2 class="section-title mb-4">Ready to start your project?</h2>
+<p class="mb-4">Let us help you bring your architectural vision to life.</p>
+<a href="contact.html" class="btn btn-accent btn-xlarge btn-rounded">Get in Touch</a>
+</div>
+</section>
+
+</main>
+
+<!-- GALLERY -->
+<div id="galleryModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;overflow:auto;padding:40px;">
+<button onclick="closeGallery()" style="position:fixed;top:20px;right:20px;background:#fff;border:none;padding:10px 20px;">Close</button>
+<div id="galleryContent" style="max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;"></div>
+</div>
+
+<!-- FLOATING BUTTONS (UNCHANGED) -->
     <div class="floating-buttons" id="floatingButtons">
         <button class="float-btn toggle-btn" onclick="toggleFloatingButtons()">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -174,8 +131,9 @@
             </svg>
         </a>
     </div>
+<!-- KEEP EXACT SAME (already present in your file) -->
 
-    <!-- Footer -->
+<!-- FOOTER (UNCHANGED) -->
     <footer class="footer">
         <div class="container">
             <div class="row pb-5">
@@ -184,7 +142,7 @@
                     <ul class="footer-menu list-unstyled">
                         <li class="mb-3">
                             <strong>Address:</strong>
-                            <p>D-13, 14, near Bank of Baroda, Shailendra Nagar, Raipur, Chhattisgarh 492001</p>
+                            <p>D-13, 14, Near Bank of Baroda, Shailendra Nagar, Raipur, Chhattisgarh 492001</p>
                         </li>
                         <li class="mb-3">
                             <strong>Phone:</strong>
@@ -219,27 +177,13 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3">
-                    <h5>Gallery</h5>
-                    <div class="footer-gallery">
-                        <a href="portfolio.html" class="gallery-thumb" title="Gallery 1">
-                            <img src="images/home2.jpeg" alt="Gallery 1">
-                        </a>
-                        <a href="portfolio.html" class="gallery-thumb" title="Gallery 2">
-                            <img src="images/home3.jpg" alt="Gallery 2">
-                        </a>
-                        <a href="portfolio.html" class="gallery-thumb" title="Gallery 3">
-                            <img src="images/home4.jpg" alt="Gallery 3">
-                        </a>
-                        <a href="portfolio.html" class="gallery-thumb" title="Gallery 4">
-                            <img src="images/home5.jpg" alt="Gallery 4">
-                        </a>
-                        <a href="portfolio.html" class="gallery-thumb" title="Gallery 5">
-                            <img src="images/home6.jpg" alt="Gallery 5">
-                        </a>
-                        <a href="portfolio.html" class="gallery-thumb" title="Gallery 6">
-                            <img src="images/home7.jpg" alt="Gallery 6">
-                        </a>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Follow Us</h5>
+                
+                    <div class="social-icons mt-3">
+                        <a href="https://www.facebook.com/profile.php?id=61588532665640"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/architectprincy/"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/architectprincy/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -249,7 +193,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <p>&copy; 2026 ArchiPrincy. All rights reserved.</p>
+                        <p>&copy; 2026 Architect Princy. All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <p>A Rishabh Builders Product</p>
@@ -258,29 +202,213 @@
             </div>
         </div>
     </footer>
+<!-- KEEP EXACT SAME (already present in your file) -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-        function filterProjects(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="js/script.js" defer></script>
 
-            const projects = document.querySelectorAll('.project-card');
-            let visibleCount = 0;
+<script>
 
-            projects.forEach(project => {
-                if (category === 'all' || project.getAttribute('data-category') === category) {
-                    project.style.display = '';
-                    visibleCount++;
-                } else {
-                    project.style.display = 'none';
-                }
-            });
+const projects = [
 
-            document.getElementById('projectCount').textContent = visibleCount;
-        }
-    </script>
+{
+name:"K-901",
+category:"residential",
+images:[
+"images/K-901A.jpg","images/K-901A1.jpg","images/K-901A2.jpg","images/K-901A3.jpg",
+"images/K-901A4.jpg","images/K-901A5.jpg","images/K-901A6.jpg","images/K-901A7.jpeg",
+"images/K-901A8.jpg","images/K-901A9.jpg","images/K-901A10.jpg","images/K-901A11.jpg",
+"images/K-90112.jpg","images/K-901A13.jpg"
+]
+},
+
+{
+name:"SOHO Office Pune",
+category:"commercial",
+images:[
+"images/soho-office-pune-A.jpeg","images/soho-office-pune-A1.jpeg","images/soho-office-pune-A2.jpeg","images/soho-office-pune-A3.jpeg",
+"images/soho-office-pune-A4.jpeg","images/soho-office-pune-A5.jpeg","images/soho-office-pune-A6.jpeg","images/soho-office-pune-A7.jpeg",
+"images/soho-office-pune-A8.jpeg","images/soho-office-pune-A9.jpeg","images/soho-office-pune-A10.jpeg","images/soho-office-pune-A11.jpeg",
+"images/soho-office-pune-A12.jpeg","images/soho-office-pune-A13.jpeg"
+]
+},
+
+{
+name:"J-001",
+category:"residential",
+images:[
+"images/J-001-A.jpg","images/J-001-A1.jpg","images/J-001-A2.jpg","images/J-001-A3.jpg",
+"images/J-001-A4.jpg","images/J-001-A5.jpg","images/J-001-A6.jpg","images/J-001-A7.jpg",
+"images/J-001-A8.jpg","images/J-001-A9.jpg","images/J-001-A10.jpg","images/J-001-A11.jpg",
+"images/J-001-A12.jpg","images/J-001-A13.jpg","images/J-001-A14.jpg"
+]
+},
+
+{
+name:"Furniture",
+category:"furniture",
+images:[
+"images/Furniture-1.jpeg","images/Furniture-2.jpeg","images/Furniture-3.jpeg",
+"images/Furniture-4.jpeg","images/Furniture-5.jpeg","images/Furniture-6.jpeg",
+"images/Furniture-7.jpeg","images/Furniture-8.jpeg","images/Furniture-9.jpeg",
+"images/Furniture-10.jpeg","images/Furniture-11.jpeg","images/Furniture-12.jpeg",
+"images/Furniture-13.jpeg","images/Furniture-14.jpeg","images/Furniture-15.jpeg",
+"images/Furniture-16.jpeg","images/Furniture-17.jpeg","images/Furniture-18.jpeg",
+"images/Furniture-19.jpeg","images/Furniture-20.jpeg","images/Furniture-21.jpeg",
+"images/Furniture-22.jpeg"
+]
+},
+
+{
+name:"C-103",
+category:"residential",
+images:[
+"images/C-103-A.jpeg","images/C-103-A1.jpeg","images/C-103-A2.jpeg",
+"images/C-103-A3.jpeg","images/C-103-A4.jpeg","images/C-103-A5.jpeg",
+"images/C-103-A6.jpeg","images/C-103-A7.jpeg","images/C-103-A8.jpeg"
+]
+},
+
+{
+name:"F-103",
+category:"residential",
+images:[
+"images/F-103-A.jpeg","images/F-103-A1.jpeg","images/F-103-A2.jpeg",
+"images/F-103-A3.jpeg","images/F-103-A4.jpeg","images/F-103-A5.jpeg",
+"images/F-103-A6.jpeg"
+]
+},
+
+{
+name:"F-104",
+category:"residential",
+images:[
+"images/F-104-A.jpeg","images/F-104-A1.jpeg","images/F-104-A2.jpeg",
+"images/F-104-A3.jpeg","images/F-104-A4.jpeg","images/F-104-A5.jpeg",
+"images/F-104-A6.jpeg"
+]
+},
+
+{
+name:"G-203",
+category:"residential",
+images:[
+"images/G-203-1.jpeg","images/G-203-2.jpeg","images/G-203-3.jpeg",
+"images/G-203-4.jpeg","images/G-203-5.jpeg","images/G-203-6.jpeg",
+"images/G-203-7.jpg","images/G-203-8.jpg","images/G-203-9.jpg",
+"images/G-203-11.jpg","images/G-203-12.jpg","images/G-203-13.jpg",
+"images/G-203-14.jpg","images/G-203-15.jpg","images/G-203-16.jpg"
+]
+},
+
+{
+name:"H-201",
+category:"residential",
+images:[
+"images/H-201-LIVING.jpg","images/H-201-DINING.jpg","images/H-201-KITCHEN.jpg"
+]
+},
+
+{
+name:"H-902",
+category:"residential",
+images:[
+"images/H-902-A.jpeg","images/H-902-A1.jpeg","images/H-902-A2.jpeg","images/H-902-A3.jpeg",
+"images/H-902-A4.jpeg","images/H-902-A5.jpeg","images/H-902-A6.jpeg","images/H-902-A7.jpeg",
+"images/H-902-A8.jpeg","images/H-902-A9.jpeg","images/H-902-A10.jpeg","images/H-902-A11.jpeg",
+"images/H-902-A12.jpeg","images/H-902-A13.jpeg","images/H-902-A14.jpeg"
+]
+},
+
+{
+name:"I-205",
+category:"residential",
+images:[
+"images/I-205-1.jpg","images/I-205-2.jpeg","images/I-205-3.jpeg","images/I-205-4.jpg",
+"images/I-205-5.jpg","images/I-205-6.jpg","images/I-205-7.jpg","images/I-205-8.jpg",
+"images/I-205-9.jpg","images/I-205-10.jpg","images/I-205-1.jpg","images/I-205-11.jpg",
+"images/I-205-12.jpg"
+]
+},
+
+{
+name:"K-903",
+category:"residential",
+images:[
+"images/K-903-A.jpg","images/K-903-A2.jpg","images/K-903-A3.jpg","images/K-903-A4.jpg",
+"images/K-903-A5.jpg","images/K-903-A6.jpg","images/K-903-A7.jpg","images/K-903-A8.jpg",
+"images/K-903-A9.jpg","images/K-903-A10.jpg","images/K-903-A11.jpg","images/K-903-A12.jpg",
+"images/K-903-A13.jpg","images/K-903-A14.jpg"
+]
+},
+
+{
+name:"M-002",
+category:"residential",
+images:[
+"images/M-002-A.jpg","images/M-002-A1.jpg","images/M-002-A2.jpg","images/M-002-A3.jpg",
+"images/M-002-A4.jpg","images/M-002-A5.jpg","images/M-002-A6.jpg","images/M-002-A7.jpg",
+"images/M-002-A8.jpg","images/M-002-A9.jpg","images/M-002-A10.jpg","images/M-002-A11.jpg",
+"images/M-002-A12.jpg","images/M-002-A13.jpg","images/M-002-A14.jpg","images/M-002-A15.jpg",
+"images/M-002-A16.jpg","images/M-002-A17.jpg","images/M-002-A18.jpg"
+]
+},
+
+];
+
+const container = document.getElementById("portfolioContainer");
+
+function renderProjects(category="all"){
+container.innerHTML="";
+let count=0;
+
+projects.forEach(p=>{
+if(category==="all" || p.category===category){
+
+container.innerHTML+=`
+<div class="col-md-4 project-card">
+<div class="portfolio-item" onclick="openGallery('${p.name}')">
+<img src="${p.images[0]}" alt="${p.name}">
+<div class="portfolio-overlay">
+<h3>${p.name}</h3>
+<p>${p.category}</p>
+<p>${p.images.length} Images</p>
+</div>
+</div>
+</div>`;
+
+count++;
+}
+});
+
+document.getElementById("projectCount").textContent = count;
+}
+
+function filterProjects(category){
+document.querySelectorAll('.filter-btn').forEach(btn=>btn.classList.remove('active'));
+event.target.classList.add('active');
+renderProjects(category);
+}
+
+function openGallery(name){
+const project = projects.find(p=>p.name===name);
+const gallery = document.getElementById("galleryContent");
+gallery.innerHTML="";
+
+project.images.forEach(img=>{
+gallery.innerHTML+=`<img src="${img}" style="width:100%;border-radius:6px;">`;
+});
+
+document.getElementById("galleryModal").style.display="block";
+}
+
+function closeGallery(){
+document.getElementById("galleryModal").style.display="none";
+}
+
+renderProjects();
+
+</script>
+
 </body>
 </html>
